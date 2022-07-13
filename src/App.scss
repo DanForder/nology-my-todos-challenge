@@ -1,0 +1,11 @@
+@use "./styles/reset";
+@use "./styles/typography";
+
+@use "./styles/variables" as *;
+
+.app {
+  height: 100vh;
+  padding: 1.5rem;
+  overflow: scroll;
+  background-color: $color-background;
+}
