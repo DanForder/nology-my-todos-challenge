@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/my-todos-challenge-react/static/css/main.2db8cba4.css",
-    "main.js": "/my-todos-challenge-react/static/js/main.645bed02.js",
+    "main.js": "/my-todos-challenge-react/static/js/main.c1d16b8c.js",
     "static/js/787.3050a027.chunk.js": "/my-todos-challenge-react/static/js/787.3050a027.chunk.js",
     "index.html": "/my-todos-challenge-react/index.html",
     "main.2db8cba4.css.map": "/my-todos-challenge-react/static/css/main.2db8cba4.css.map",
-    "main.645bed02.js.map": "/my-todos-challenge-react/static/js/main.645bed02.js.map",
+    "main.c1d16b8c.js.map": "/my-todos-challenge-react/static/js/main.c1d16b8c.js.map",
     "787.3050a027.chunk.js.map": "/my-todos-challenge-react/static/js/787.3050a027.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2db8cba4.css",
-    "static/js/main.645bed02.js"
+    "static/js/main.c1d16b8c.js"
   ]
 }
