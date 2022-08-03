@@ -17,7 +17,7 @@ const List = ({ emptyText, items = [], removeItem, toggleCheck }) => {
               type="checkbox"
               id={`todo-${index}`}
               checked={item.checked}
-              onChange={() => toggleCheck(index)}
+              onChange={(e) => toggleCheck(index, e.target.checked)}
             />
             <label className="list__label" htmlFor={`todo-${index}`}>
               {item.text}

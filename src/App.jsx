@@ -22,10 +22,10 @@ const App = () => {
     setTodoItems([]);
   };
 
-  const toggleCheck = (index) => {
+  const toggleCheck = (index, checkValue) => {
     setTodoItems((prevState) =>
       prevState.map((todo, arrIndex) => {
-        if (index === arrIndex) todo.checked = !todo.checked;
+        if (index === arrIndex) todo.checked = checkValue;
         return todo;
       })
     );
