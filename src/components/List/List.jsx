@@ -1,26 +1,33 @@
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./List.scss";
 
-const List = ({ emptyText, items = [] }) => {
+const List = ({ emptyText, items = [], removeItem, toggleCheck }) => {
   if (items.length === 0) {
     return <p>{emptyText}</p>;
   }
 
   return (
     <ul className="list">
-      {items.map(({ checked, content }, index) => {
+      {items.map((item, index) => {
         return (
-          <li class="list__item">
+          <li key={item.text + index} className="list__item">
             <input
-              class="list__input"
+              className="list__input"
               type="checkbox"
               id={`todo-${index}`}
-              checked={checked}
+              checked={item.checked}
+              onChange={() => toggleCheck(index)}
             />
-            <label class="list__label" for={`todo-${index}`}>
-              ${content}
+            <label className="list__label" htmlFor={`todo-${index}`}>
+              {item.text}
             </label>
-            <button class="list__delete" aria-label="Delete todo item">
-              <i class="far fa-trash-alt" aria-hidden="true"></i>
+            <button
+              className="list__delete"
+              aria-label="Delete todo item"
+              onClick={() => removeItem(item)}
+            >
+              <FontAwesomeIcon icon={faTrashAlt} />
             </button>
           </li>
         );
