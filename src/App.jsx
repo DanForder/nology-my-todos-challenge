@@ -7,25 +7,28 @@ import TextField from "./components/TextField/TextField";
 const App = () => {
   const [todoItems, setTodoItems] = useState([]);
 
-  const removeItem = (item) => {
+  const removeItem = (id) => {
     setTodoItems((prevState) =>
-      prevState.filter((element) => element !== item)
+      prevState.filter((element) => element.id !== id)
     );
   };
 
   const addItem = (text) => {
     if (!text) return alert("please enter a todo");
-    setTodoItems((prevState) => [...prevState, { text, checked: false }]);
+    setTodoItems((prevState) => [
+      ...prevState,
+      { text, checked: false, id: Math.random() },
+    ]);
   };
 
   const handleReset = () => {
     setTodoItems([]);
   };
 
-  const toggleCheck = (index, checkValue) => {
+  const toggleCheck = (id, checkValue) => {
     setTodoItems((prevState) =>
-      prevState.map((todo, arrIndex) => {
-        if (index === arrIndex) todo.checked = checkValue;
+      prevState.map((todo) => {
+        if (id === todo.id) todo.checked = checkValue;
         return todo;
       })
     );

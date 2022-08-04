@@ -9,23 +9,23 @@ const List = ({ emptyText, items = [], removeItem, toggleCheck }) => {
 
   return (
     <ul className="list">
-      {items.map((item, index) => {
+      {items.map((item) => {
         return (
-          <li key={item.text + index} className="list__item">
+          <li key={item.id} className="list__item">
             <input
               className="list__input"
               type="checkbox"
-              id={`todo-${index}`}
+              id={`todo-${item.id}`}
               checked={item.checked}
-              onChange={(e) => toggleCheck(index, e.target.checked)}
+              onChange={(e) => toggleCheck(item.id, e.target.checked)}
             />
-            <label className="list__label" htmlFor={`todo-${index}`}>
+            <label className="list__label" htmlFor={`todo-${item.id}`}>
               {item.text}
             </label>
             <button
               className="list__delete"
               aria-label="Delete todo item"
-              onClick={() => removeItem(item)}
+              onClick={() => removeItem(item.id)}
             >
               <FontAwesomeIcon icon={faTrashAlt} />
             </button>
